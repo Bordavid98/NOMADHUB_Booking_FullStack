@@ -15,8 +15,8 @@ import SearchModal from "./components/modals/SearchModal"
 
 
 export const metadata = {
-  title: "Airbnb",
-  description: "Airbnb clone",
+  title: "Nomad Hub - The Strongest Nomad Community",
+  description: "Get what you already want and need as a nomad for a lower price than anywhere else on the planet .",
 }
 
 const font = Nunito({ subsets: ["latin"] })
