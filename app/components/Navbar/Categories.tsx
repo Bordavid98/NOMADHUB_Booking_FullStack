@@ -5,7 +5,8 @@ import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
 import { 
 	GiBarn,
 	GiBoatFishing, 
-	GiCactus, 
+	GiCactus,
+	GiHouse,
 	GiCastle, 
 	GiCaveEntrance, 
 	GiForestCamp, 
@@ -21,7 +22,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 export const categories = [
 	{
 		label: 'Houses',
-		icon: TbBeach,
+		icon: GiHouse,
 		description: 'This property is entire houses!'
 	},
 
@@ -33,7 +34,7 @@ export const categories = [
 
 	{
 		label: 'Coliving',
-		icon: GiWindmill,
+		icon: GiCactus,
 		description: 'This property has coliving with other nomads!'
 	},
 	{
