@@ -2,7 +2,6 @@
 
 import Container from "../Container";
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
-import { FaHouseChimney } from "react-icons/fa6";
 import { 
 	GiBarn,
 	GiBoatFishing, 
@@ -14,7 +13,8 @@ import {
 	GiIsland, 
 	GiWindmill } from "react-icons/gi";
 import { MdOutlineVilla } from "react-icons/md";
-import { FaSkiing } from "react-icons/fa";
+import { FaHouseChimney } from "react-icons/fa6";
+import { FaSkiing} from "react-icons/fa";
 import { BsSnow } from "react-icons/bs";
 import { IoDiamond } from "react-icons/io5";
 import CategoryBox from "../CategoryBox";
