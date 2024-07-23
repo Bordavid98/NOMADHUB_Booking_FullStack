@@ -1,7 +1,7 @@
 'use client';
 
 import Container from "../Container";
-import { FaHouseChimney } from "react-icons/fa6";
+import { FaHouseChimney, FaPeopleRoof } from "react-icons/fa6";
 import { TbBeach, TbMountain, TbPool, TbYoga } from "react-icons/tb";
 import { 
 	GiBarn,
@@ -35,7 +35,7 @@ export const categories = [
 
 	{
 		label: 'Coliving',
-		icon: GiCactus,
+		icon: FaPeopleRoof,
 		description: 'This property has coliving with other nomads!'
 	},
 	{
