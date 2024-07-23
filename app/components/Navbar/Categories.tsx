@@ -20,79 +20,51 @@ import { usePathname, useSearchParams } from "next/navigation";
 
 export const categories = [
 	{
-		label: 'Beach',
+		label: 'Houses',
 		icon: TbBeach,
-		description: 'This property is close to the beach!'
+		description: 'This property is entire houses!'
 	},
+
 	{
-		label: 'Windmills',
-		icon: GiWindmill,
-		description: 'This property has windmills!'
-	},
-	{
-		label: 'Modern',
-		icon: MdOutlineVilla,
-		description: 'This property is modern!'
-	},
-	{
-		label: 'Countryside',
-		icon: TbMountain,
-		description: 'This property is in the countryside!'
-	},
-	{
-		label: 'Pools',
-		icon: TbPool,
-		description: 'This property has a pool'
-	},
-	{
-		label: 'Islands',
-		icon: GiIsland,
-		description: 'This property is on an island'
-	},
-	{
-		label: 'Lake',
-		icon: GiBoatFishing,
-		description: 'This property is close to a lake'
-	},
-	{
-		label: 'Skiing',
-		icon: FaSkiing,
-		description: 'This property is has skiing activites'
-	},
-	{
-		label: 'Castles',
+		label: 'Villas',
 		icon: GiCastle,
-		description: 'This property is in a castle'
+		description: 'This property is a mansion!'
+	}
+
+	{
+		label: 'Coliving',
+		icon: GiWindmill,
+		description: 'This property has coliving with other nomads!'
 	},
 	{
-		label: 'Camping',
-		icon: GiForestCamp,
-		description: 'This property has camping activities'
+		label: 'Apartmnets',
+		icon: MdOutlineVilla,
+		description: 'This property is entire flats!'
 	},
 	{
-		label: 'Arctic',
-		icon: BsSnow,
-		description: 'This property has camping activities!'
+		label: 'Rooms',
+		icon: TbMountain,
+		description: 'In this property you have your own room!'
 	},
 	{
-		label: 'Cave',
-		icon: GiCaveEntrance,
-		description: 'This property is in a cave!'
+		label: 'Coworking',
+		icon: TbPool,
+		description: 'This property is coworking space!'
 	},
 	{
-		label: 'Desert',
-		icon: GiCactus,
-		description: 'This property is in the desert!'
+		label: 'Yoga',
+		icon: GiIsland,
+		description: 'This is a yoga retreat!'
 	},
 	{
-		label: 'Barn',
-		icon: GiBarn,
-		description: 'This property is in the farm!'
+		label: 'Gyms',
+		icon: GiBoatFishing,
+		description: 'This is a gym!'
 	},
 	{
-		label: 'Lux',
-		icon: IoDiamond,
-		description: 'This property is luxurious!'
+		label: 'Surfing',
+		icon: FaSkiing,
+		description: 'This is a surfing retreat!'
 	},
 ]
 
