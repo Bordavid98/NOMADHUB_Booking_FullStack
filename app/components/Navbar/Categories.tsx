@@ -1,7 +1,7 @@
 'use client';
 
 import Container from "../Container";
-import { FaHouseChimney, FaPeopleRoof, FaVihara } from "react-icons/fa6";
+import { FaHouseChimney, FaPeopleRoof, FaVihara, FaBed } from "react-icons/fa6";
 import { TbBeach, TbMountain, TbPool, TbYoga } from "react-icons/tb";
 import { 
 	GiBarn,
@@ -39,13 +39,13 @@ export const categories = [
 		description: 'This property has coliving with other nomads!'
 	},
 	{
-		label: 'Apartmnets',
+		label: 'Apartments',
 		icon: MdOutlineVilla,
 		description: 'This property is entire flats!'
 	},
 	{
 		label: 'Rooms',
-		icon: TbMountain,
+		icon: FaBed,
 		description: 'In this property you have your own room!'
 	},
 	{
