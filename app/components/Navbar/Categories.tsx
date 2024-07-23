@@ -2,6 +2,8 @@
 
 import Container from "../Container";
 import { FaHouseChimney, FaPeopleRoof, FaVihara, FaBed } from "react-icons/fa6";
+import { CgGym } from "react-icons/cg";
+import { MdSurfing } from "react-icons/md";
 import { TbBeach, TbMountain, TbPool, TbYoga } from "react-icons/tb";
 import { 
 	GiBarn,
@@ -15,8 +17,7 @@ import {
 	GiWindmill } from "react-icons/gi";
 import { MdOutlineVilla } from "react-icons/md";
 import { FaSkiing} from "react-icons/fa";
-import { BsSnow } from "react-icons/bs";
-import { IoDiamond } from "react-icons/io5";
+import { BsPersonWorkspace } from "react-icons/bs";
 import CategoryBox from "../CategoryBox";
 import { usePathname, useSearchParams } from "next/navigation";
 
@@ -50,7 +51,7 @@ export const categories = [
 	},
 	{
 		label: 'Coworking',
-		icon: TbPool,
+		icon: BsPersonWorkspace,
 		description: 'This property is coworking space!'
 	},
 	{
@@ -60,12 +61,12 @@ export const categories = [
 	},
 	{
 		label: 'Gyms',
-		icon: GiBoatFishing,
+		icon: CgGym,
 		description: 'This is a gym!'
 	},
 	{
 		label: 'Surfing',
-		icon: FaSkiing,
+		icon: MdSurfing,
 		description: 'This is a surfing retreat!'
 	},
 ]
