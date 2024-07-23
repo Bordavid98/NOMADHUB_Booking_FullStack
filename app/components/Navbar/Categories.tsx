@@ -1,7 +1,8 @@
 'use client';
 
 import Container from "../Container";
-import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
+import { FaHouseChimney } from "react-icons/fa6";
+import { TbBeach, TbMountain, TbPool, TbYoga } from "react-icons/tb";
 import { 
 	GiBarn,
 	GiBoatFishing, 
@@ -13,7 +14,6 @@ import {
 	GiIsland, 
 	GiWindmill } from "react-icons/gi";
 import { MdOutlineVilla } from "react-icons/md";
-import { FaHouseChimney } from "react-icons/fa6";
 import { FaSkiing} from "react-icons/fa";
 import { BsSnow } from "react-icons/bs";
 import { IoDiamond } from "react-icons/io5";
@@ -55,7 +55,7 @@ export const categories = [
 	},
 	{
 		label: 'Yoga',
-		icon: GiIsland,
+		icon: TbYoga,
 		description: 'This is a yoga retreat!'
 	},
 	{
