@@ -2,6 +2,7 @@
 
 import Container from "../Container";
 import { TbBeach, TbMountain, TbPool } from "react-icons/tb";
+import { FaHouseChimney } from "react-icons/fa6";
 import { 
 	GiBarn,
 	GiBoatFishing, 
@@ -22,7 +23,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 export const categories = [
 	{
 		label: 'Houses',
-		icon: GiHouse,
+		icon: FaHouseChimney,
 		description: 'This property is entire houses!'
 	},
 
