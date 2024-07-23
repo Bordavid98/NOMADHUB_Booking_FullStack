@@ -29,7 +29,7 @@ export const categories = [
 		label: 'Villas',
 		icon: GiCastle,
 		description: 'This property is a mansion!'
-	}
+	},
 
 	{
 		label: 'Coliving',
