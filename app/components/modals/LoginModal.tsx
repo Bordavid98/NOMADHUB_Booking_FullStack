@@ -109,7 +109,7 @@ const LoginModal = () => {
 				"
       >
         <div className="justify-center flex flex-row items-center gap-2">
-          <div>First time using Airbnb?</div>
+          <div>First time using Nomad Hub?</div>
           <div
             onClick={toggle}
             className="
