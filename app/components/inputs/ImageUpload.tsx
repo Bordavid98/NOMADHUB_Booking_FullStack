@@ -2,12 +2,8 @@
 
 import { CldUploadWidget } from "next-cloudinary";
 import Image from "next/image";
-import { useCallback, useState, useEffect } from "react";
+import { useCallback } from "react";
 import { TbPhotoPlus } from "react-icons/tb";
-import { Cloudinary } from '@cloudinary/url-gen';
-import { auto } from '@cloudinary/url-gen/actions/resize';
-import { autoGravity } from '@cloudinary/url-gen/qualifiers/gravity';
-import { AdvancedImage } from '@cloudinary/react';
 
 declare global {
 	var cloudinary: any;
@@ -22,43 +18,14 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 	onChange,
 	value
 }) => {
-	const [transformedUrl, setTransformedUrl] = useState(value);
-
 	const handleUpload = useCallback((result: any) => {
-		const secureUrl = result.info.secure_url;
-		onChange(secureUrl);
-
-		// Create a Cloudinary instance
-		const cld = new Cloudinary({ cloud: { cloudName: 'nomadhubworldwide' } });
-		
-		// Transform the uploaded image
-		const img = cld
-			.image(secureUrl)
-			.format('auto')
-			.quality('auto')
-			.resize(auto().gravity(autoGravity()).width(500).height(500));
-
-		// Update the transformed URL
-		setTransformedUrl(img.toURL());
-	}, [onChange]);
-
-	useEffect(() => {
-		if (value) {
-			const cld = new Cloudinary({ cloud: { cloudName: 'nomadhubworldwide' } });
-			const img = cld
-				.image(value)
-				.format('auto')
-				.quality('auto')
-				.resize(auto().gravity(autoGravity()).width(500).height(500));
-
-			setTransformedUrl(img.toURL());
-		}
-	}, [value]);
+		onChange(result.info.secure_url);
+	}, [onChange]);	
 
 	return ( 
 		<CldUploadWidget
 			onUpload={handleUpload}
-			uploadPreset="nomads44"
+			uploadPreset="nomad44"
 			options={{
 				maxFiles: 1,
 			}}
@@ -88,7 +55,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 						<div className="font-bold text-lg">
 							Click to upload
 						</div>
-						{transformedUrl && (
+						{value && (
 							<div
 								className="absolute inset-0 w-full h-full"
 							>	
@@ -96,7 +63,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({
 									alt="Upload"
 									fill
 									style={{ objectFit: "cover" }}
-									src={transformedUrl}
+									src={value}
 								/>
 							</div>
 						)}
