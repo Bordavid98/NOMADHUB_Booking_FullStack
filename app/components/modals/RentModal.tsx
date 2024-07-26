@@ -271,7 +271,7 @@ const RentModal = () => {
 			actionLabel={actionLabel}
 			secondaryActionLabel={secondaryActionLabel}
 			secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
-			title="List your service to the strongest Digital Nomad community"
+			title="List your service at Nomad Hub"
 			body={bodyContent}
 		/>
 	 );
