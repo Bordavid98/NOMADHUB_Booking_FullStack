@@ -1,77 +1,78 @@
 "use client";
 
-import { CldUploadWidget } from "next-cloudinary";
+import React, { useCallback, useState } from "react";
 import Image from "next/image";
-import { useCallback } from "react";
 import { TbPhotoPlus } from "react-icons/tb";
 
-declare global {
-    var cloudinary: any;
-}
-
 interface ImageUploadProps {
-    onChange: (value: string) => void;
-    value: string;
+  onChange: (value: string) => void;
+  value: string;
 }
 
-const ImageUpload: React.FC<ImageUploadProps> = ({
-    onChange,
-    value
-}) => {
-    const handleUpload = useCallback((result: any) => {
-        onChange(result.info.secure_url);
-    }, [onChange]);    
+const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
+  const [uploading, setUploading] = useState(false);
 
-    return ( 
-        <CldUploadWidget
-            onSuccess={handleUpload}
-            uploadPreset="dguoxeu4"
-            options={{
-                maxFiles: 1,
-            }}
-        >
-            {({ open }) => {
-                return (
-                    <div
-                        onClick={() => open?.()}
-                        className="
-                            relative
-                            cursor-pointer
-                            hover:opacity-70
-                            transition
-                            border-dashed
-                            border-2
-                            p-20
-                            border-neutral-300
-                            flex
-                            flex-col
-                            justify-center
-                            items-center
-                            gap-4
-                            text-neutral-600
-                        "
-                    >
-                        <TbPhotoPlus size={50}/>
-                        <div className="font-bold text-lg">
-                            Click to upload
-                        </div>
-                        {value && (
-                            <div
-                                className="absolute inset-0 w-full h-full"
-                            >    
-                                <Image
-                                    alt="Upload"
-                                    fill
-                                    style={{ objectFit: "cover" }}
-                                    src={value}
-                                />
-                            </div>
-                        )}
-                    </div>
-                );
-            }}
-        </CldUploadWidget>
-     );
-}
+  const handleUpload = useCallback(
+    async (event: React.ChangeEvent<HTMLInputElement>) => {
+      const file = event.target.files?.[0];
+      if (!file) return;
+
+      setUploading(true);
+
+      try {
+        const formData = new FormData();
+        formData.append("file", file);
+        formData.append("upload_preset", "dguoxeu4");
+
+        const response = await fetch(
+          "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload",
+          {
+            method: "POST",
+            body: formData,
+          }
+        );
+
+        if (!response.ok) {
+          throw new Error("Upload failed");
+        }
+
+        const data = await response.json();
+        onChange(data.secure_url);
+      } catch (error) {
+        console.error("Upload error:", error);
+        // Handle error (e.g., show error message to user)
+      } finally {
+        setUploading(false);
+      }
+    },
+    [onChange]
+  );
+
+  return (
+    <div className="relative cursor-pointer hover:opacity-70 transition border-dashed border-2 p-20 border-neutral-300 flex flex-col justify-center items-center gap-4 text-neutral-600">
+      <input
+        type="file"
+        accept="image/*"
+        onChange={handleUpload}
+        className="absolute inset-0 w-full h-full opacity-0 cursor-pointer"
+        disabled={uploading}
+      />
+      <TbPhotoPlus size={50} />
+      <div className="font-bold text-lg">
+        {uploading ? "Uploading..." : "Click to upload"}
+      </div>
+      {value && (
+        <div className="absolute inset-0 w-full h-full">
+          <Image
+            alt="Upload"
+            fill
+            style={{ objectFit: "cover" }}
+            src={value}
+          />
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default ImageUpload;
