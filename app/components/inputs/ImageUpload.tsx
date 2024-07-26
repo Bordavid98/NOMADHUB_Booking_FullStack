@@ -25,7 +25,7 @@ const ImageUpload: React.FC<ImageUploadProps> = ({ onChange, value }) => {
         formData.append("upload_preset", "dguoxeu4");
 
         const response = await fetch(
-          "https://api.cloudinary.com/v1_1/YOUR_CLOUD_NAME/image/upload",
+          "https://api.cloudinary.com/v1_1/nomadhubworldwide/image/upload",
           {
             method: "POST",
             body: formData,
